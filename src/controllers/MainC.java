@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 
+import utils.MathUtils;
+
 public class MainC extends HttpServlet {
 	
 	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -18,7 +20,8 @@ public class MainC extends HttpServlet {
 		PrintWriter out = null;
 		try {
 			out = response.getWriter();
-			out.println("It's running!");
+			out.println("It's running!<br><br>");
+			out.println(MathUtils.fizzbuzz(-34));
 		} finally {
 			IOUtils.closeQuietly(out);
 		}
