@@ -32,6 +32,12 @@ public class MainC extends HttpServlet {
 			List<List<Integer>> list = setListOfCard();
 			out.println(new ContestOfPrograming().CardGameArrange(list.get(0), list.get(1)));
 			
+			out.println("<br><br>It's running!<br><br>");
+			out.println(MathUtils.offRecursion(25));
+			out.println("<br><br>It's running!<br><br>");
+			out.println(MathUtils.onRecursion(25));
+			out.println("<br><br>It's running!<br><br>");
+			out.println(MathUtils.euclid(36, 72));
 		} finally {
 			IOUtils.closeQuietly(out);
 		}

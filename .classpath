@@ -4,5 +4,13 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/servlet-api-3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/commons-io-2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/com.sun.el-2.2.0.v201303151357.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/javax.el-2.2.0.v201303151357.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/javax.servlet.jsp.jstl-1.2.0.v201105211821.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/javax.servlet.jsp-2.2.0.v201112011158.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/org.apache.jasper.glassfish-2.2.2.v201112011158.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jsp/org.eclipse.jdt.core-3.8.2.v20130121.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/tools/jetty-distribution-9.0.6.v20130930/lib/jetty-util-9.0.6.v20130930.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
