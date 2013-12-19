@@ -53,7 +53,7 @@ public class MathUtils {
 	 * @return 解答
 	 */
 	public static long onRecursion(int number) {
-			return number > 0 ? number * onRecursion(number - 1) : 1;
+		return number > 0 ? number * onRecursion(number - 1) : 1;
 	}
 	
 	/**
