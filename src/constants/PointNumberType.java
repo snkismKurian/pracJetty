@@ -22,7 +22,7 @@ public enum PointNumberType implements ConstType<Integer> {
 	}
 
 	@Override
-	public String getLabel() {
+	public String getName() {
 		return this.name;
 	}
 

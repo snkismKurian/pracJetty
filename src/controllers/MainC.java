@@ -38,6 +38,11 @@ public class MainC extends HttpServlet {
 			out.println(MathUtils.onRecursion(25));
 			out.println("<br><br>It's running!<br><br>");
 			out.println(MathUtils.euclid(36, 72));
+			out.println("<br><br>It's running!<br><br>");
+			out.println(MathUtils.towerOfHanoi(new StringBuffer(), 3, 1, 3));
+			out.println("<br><br>It's running!<br><br>");
+			out.println("<br><br>It's running!<br><br>");
+			out.println("<br><br>It's running!<br><br>");
 		} finally {
 			IOUtils.closeQuietly(out);
 		}

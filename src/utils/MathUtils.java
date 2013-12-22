@@ -1,5 +1,7 @@
 package utils;
 
+import constants.DefinitionType;
+
 
 
 
@@ -29,6 +31,14 @@ public class MathUtils {
 			phrase.append("<br>");
 		}
 		return phrase.toString();
+	}
+	
+	public static String towerOfHanoi(StringBuffer sb, int disk, int root, int feature) {
+		if (disk > 1)
+			sb.append(towerOfHanoi(sb, disk - 1, root, DefinitionType.HANOI_AXIS_NUMBER - root - feature));
+		if (disk > 1)
+			sb.append(towerOfHanoi(sb, disk - 1, DefinitionType.HANOI_AXIS_NUMBER - root - feature, feature));
+		return sb.toString();
 	}
 	
 	/**
