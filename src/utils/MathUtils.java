@@ -47,7 +47,7 @@ public class MathUtils {
 	 * @param number
 	 * @return 解答
 	 */
-	public static long offRecursion(int number) {
+	public static Long offRecursion(int number) {
 		long answer = 1;
 		while (number > 1) {
 			answer = answer * number;
@@ -72,7 +72,7 @@ public class MathUtils {
 	 * @param y
 	 * @return
 	 */
-	public static int euclid(int x, int y) {
+	public static Long euclid(int x, int y) {
 		return y == 0 ? x : euclid(y, x % y);
 	}
 

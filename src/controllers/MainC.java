@@ -17,6 +17,9 @@ import constants.PointNumberType;
 
 public class MainC extends HttpServlet {
 	
+	/** ライン毎のメッセージ */
+	private static final String LINE_MESSAGE = "<br><br>It's arunning!<br><br>%s";
+
 	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		response.setContentType("text/html; charset=utf-8");
@@ -24,28 +27,33 @@ public class MainC extends HttpServlet {
 		PrintWriter out = null;
 		try {
 			out = response.getWriter();
-			
-			out.println("It's running!<br><br>");
-			out.println(MathUtils.fizzbuzz(-34));
-			
-			out.println("<br><br>It's running!<br><br>");
+			doProcess(out, MathUtils.fizzbuzz(-34));
 			List<List<Integer>> list = setListOfCard();
-			out.println(new ContestOfPrograming().CardGameArrange(list.get(0), list.get(1)));
-			
-			out.println("<br><br>It's running!<br><br>");
-			out.println(MathUtils.offRecursion(25));
-			out.println("<br><br>It's running!<br><br>");
-			out.println(MathUtils.onRecursion(25));
-			out.println("<br><br>It's running!<br><br>");
-			out.println(MathUtils.euclid(36, 72));
-			out.println("<br><br>It's running!<br><br>");
-			out.println(MathUtils.towerOfHanoi(new StringBuffer(), 3, 1, 3));
-			out.println("<br><br>It's running!<br><br>");
-			out.println("<br><br>It's running!<br><br>");
-			out.println("<br><br>It's running!<br><br>");
+			doProcess(out, new ContestOfPrograming().CardGameArrange(list.get(0), list.get(1)));
+			doProcess(out, MathUtils.offRecursion(25));
+			doProcess(out, MathUtils.euclid(36, 72));
+			doProcess(out, MathUtils.towerOfHanoi(new StringBuffer(), 3, 1, 3));
 		} finally {
 			IOUtils.closeQuietly(out);
 		}
+	}
+
+	/**
+	 * メソッド表示
+	 * @param out PrintWriter
+	 * @param result String
+	 */
+	private void doProcess(final PrintWriter out, final String result) {
+		out.println(String.format(LINE_MESSAGE, result));
+	}
+	
+	/**
+	 * メソッド表示
+	 * @param out PrintWriter
+	 * @param result Long
+	 */
+	private void doProcess(final PrintWriter out, final Long result) {
+		out.println(String.format(LINE_MESSAGE, result));
 	}
 
 	/**FIXME ただデータ入れてるだけなので*/
