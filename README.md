@@ -5,4 +5,5 @@ Jetty:9002ポート
 Java:SE1.7
 
 ---------
-debug:localhost:9002/sampleJetty
+実行ﾃｽﾄ用
+debug:localhost:9002/sampleJetty/servlet
