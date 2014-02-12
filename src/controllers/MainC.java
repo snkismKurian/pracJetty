@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.IOUtils;
 
 import utils.ContestOfPrograming;
+import utils.LoopProcess;
 import utils.MathUtils;
 import constants.PointNumberType;
 
@@ -33,9 +34,23 @@ public class MainC extends HttpServlet {
 			doProcess(out, MathUtils.offRecursion(25));
 			doProcess(out, MathUtils.euclid(36, 72));
 			doProcess(out, MathUtils.towerOfHanoi(new StringBuffer(), 3, 1, 3));
+			doProcess(out, doLoopProcess().toString());
 		} finally {
 			IOUtils.closeQuietly(out);
 		}
+	}
+
+	/**
+	 * TODO ループプロセス（未実装）
+	 * @return
+	 */
+	private Integer doLoopProcess() {
+		for(;;) {
+			LoopProcess loopProcess = new LoopProcess(true);
+			if (loopProcess.isLoopFlg)
+				return loopProcess.loopCnt;
+		}
+		
 	}
 
 	/**
