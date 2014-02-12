@@ -65,7 +65,8 @@ public class MainC extends HttpServlet {
 		try {
 			Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
 			cipher.init(Cipher.ENCRYPT_MODE, KeyGenerator.getInstance("DES").generateKey());
-			LOG.info("hashkey algorithm : ", cipher.getAlgorithm());
+			LOG.info(String.format(
+					"hashkey algorithm : %s, blocksize : %s", cipher.getAlgorithm(), cipher.getBlockSize()));
 			byte encrypted[] = cipher.doFinal(HASH_KEY.getBytes());
 			int i = 0;
 			StringBuffer sb = new StringBuffer();
