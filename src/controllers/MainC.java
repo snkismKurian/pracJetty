@@ -1,8 +1,8 @@
 package controllers;
 
+import java.beans.Transient;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.Key;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.eclipse.jetty.util.log.Log;
+import org.eclipse.jetty.util.log.Logger;
 
 import utils.ContestOfPrograming;
 import utils.LoopProcess;
@@ -22,6 +24,9 @@ import constants.PointNumberType;
 
 public class MainC extends HttpServlet {
 	
+	/** LOG : info->情報, debug->dev, warn->エラー時*/
+	private static final Logger LOG = Log.getLog();
+
 	/** ライン毎のメッセージ */
 	private static final String LINE_MESSAGE = "<br><br>It's arunning!<br><br>%s";
 	
@@ -55,14 +60,13 @@ public class MainC extends HttpServlet {
 	 * 固定ハッシュキー暗号化
 	 * @return
 	 */
+	@Transient(false)
 	private String getHashkey() {
 		try {
-			KeyGenerator desKey = KeyGenerator.getInstance("DES");
-			Key key = desKey.generateKey();
 			Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
-			cipher.init(Cipher.ENCRYPT_MODE, key);
-			byte bt[] = HASH_KEY.getBytes();
-			byte encrypted[] = cipher.doFinal(bt);
+			cipher.init(Cipher.ENCRYPT_MODE, KeyGenerator.getInstance("DES").generateKey());
+			LOG.info("hashkey algorithm : ", cipher.getAlgorithm());
+			byte encrypted[] = cipher.doFinal(HASH_KEY.getBytes());
 			int i = 0;
 			StringBuffer sb = new StringBuffer();
 			for (;;) {
@@ -72,9 +76,8 @@ public class MainC extends HttpServlet {
 					return sb.toString();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.warn(e.getMessage());
 		}
-		
 		return null;
 	}
 
